@@ -1,0 +1,3 @@
+[submodule "list-comprehension-demos"]
+	path = list-comprehension-demos
+	url = https://github.com/openscad/list-comprehension-demos
