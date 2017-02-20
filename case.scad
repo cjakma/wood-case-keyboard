@@ -132,23 +132,16 @@ module case(
 
 module top_cutout1()
 {
-    translate(plate_width*y) outset(d=0.2, $fn=10) polygon(plate_coords);
+    translate(plate_width*y) outset(d=0.3, $fn=10) polygon(plate_coords);
 }
 
 module top_cutout2()
 {
     r = 5;
-    difference()
-    {
-        translate(plate_width*y) inset(r=1.5, $fn=10) polygon(plate_coords);
-        /* top_cutout1(); */
-        for (i = [0 : 1 : len(screw_holes)-1]) {
-            translate(screw_holes[i]) {
-                if (i == 0) translate([-r, -r]) square([r, 2*r]);
-                if (i == 1) translate([ 0, -r]) square([r, 2*r]);
-                circle(r=r);
-            }
-        }
+    rounding(r=3.5, $fn=20)
+    difference() {
+        translate(plate_width*y) inset(r=2, $fn=10) polygon(plate_coords);
+        for (i = [0 : 1 : len(screw_holes)-1]) translate(screw_holes[i]) circle(r=r);
     }
 }
 
