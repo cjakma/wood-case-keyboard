@@ -8,7 +8,7 @@ inch = 25.4;
 unit = 19.05;
 
 lead_margin = 2;
-top_cutout_depth = 6     /*lip*/    +
+top_cutout_depth = 7     /*lip*/    +
                    5     /*switch*/ +
                    1.65  /*pcb*/    +
                    lead_margin;
@@ -29,6 +29,8 @@ screw_holes = [
 x = [1, 0, 0];
 y = [0, 1, 0];
 z = [0, 0, 1];
+
+/* plate_width = plate_width - 10; */
 
 function sq(x) = pow(x, 2);
 
@@ -190,11 +192,55 @@ module switch_cutout()
         pos = sw[0];
         rot = sw[1];
         unit = sw[2];
+        row = sw[3];
         translate(pos) rotate(rot) cutout(unit);
     }
 }
 
+module keycaps()
+{
+    module R1U100() { import("./keycaps/SA_R1U100.stl"); }
+    module R2U100() { import("./keycaps/SA_R2U100.stl"); }
+    module R2U150() { import("./keycaps/SA_R2U150.stl"); }
+    module R3U100() { import("./keycaps/SA_R3U100.stl"); }
+    module R3U150() { import("./keycaps/SA_R3U150.stl"); }
+    module R3U400() { import("./keycaps/SA_R3U400.stl"); }
+    module R4U100() { import("./keycaps/SA_R4U100.stl"); }
+    module R4U150() { import("./keycaps/SA_R4U150.stl"); }
+
+    translate(plate_width*y)
+    for (sw = switch_info) {
+        pos = sw[0];
+        rot = sw[1];
+        unit = sw[2];
+        row = sw[3];
+        translate(pos) rotate(rot)
+        if (row == 0) {
+            if (unit == 1)        R1U100();
+        } else if (row == 1) {
+            if (unit == 1)        R2U100();
+            else if (unit == 1.5) R2U150();
+        } else if (row == 2) {
+            if (unit == 1)        R3U100();
+            else if (unit == 1.5) R3U150();
+        } else if (row == 3) {
+            if (unit == 1)        R4U100();
+            else if (unit == 1.5) R4U150();
+        } else if (row == 4) {
+            if (unit == 1)        R3U100();
+            else if (unit == 1.5) R3U150();
+            else if (unit == 4)   R3U400();
+        }
+    }
+}
+
+module wood_block()
+{
+    cube([330, 130, 36]);
+}
+
 module preview() {
+    color([70, 50, 15]/255)
     difference() {
         case();
 
@@ -212,25 +258,21 @@ module preview() {
         translate(-(top_cutout_depth)*z)
         linear_extrude(height=top_cutout_depth+1)
         top_drill();
-        
-
-        /* translate(front_height*z) */
-        /* rotate(tilt_angle*x) */
-        /* translate(-(50+top_cutout_depth+4)*z) */
-        /* linear_extrude(height=50) */
-        /* bottom_cutout(); */
-
-        /* translate(front_height*z) */
-        /* rotate(tilt_angle*x) */
-        /* translate(-(top_cutout_depth+6)*z) */
-        /* linear_extrude(height=top_cutout_depth+6) */
-        /* switch_cutout(); */
     }
-    /* %translate(front_height*z) */
-    /* rotate(tilt_angle*x) */
-    /* translate(-(1.75+top_cutout_depth+5)*z) */
-    /* linear_extrude(height=1.75) */
-    /* pcb(); */
+    %translate(front_height*z)
+    rotate(tilt_angle*x)
+    translate(-(1.65+top_cutout_depth+5)*z)
+    linear_extrude(height=1.65)
+    pcb();
+
+    translate(front_height*z)
+    rotate(tilt_angle*x)
+    translate(-5*z)
+    color([255, 255, 204]/255)
+    keycaps();
+
+    translate([-15, -15, 0])
+    % wood_block();
 }
 
 

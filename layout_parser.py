@@ -32,6 +32,7 @@ class Switch:
         self.height = ori.h
         self.center = ori.getCenter()
         self.corners = ori.getCorners()
+        self.row = ori.row
 
     def __repr__(self):
         return str(self.pos)
@@ -40,7 +41,8 @@ class Switch:
         return geometry.Polygon([im_to_tuple(p) for p in self.corners]).buffer(0.2)
 
     def toList(self):
-        return [[self.center.real, self.center.imag], self.rot, self.width]
+        return [[self.center.real, self.center.imag],
+                self.rot, self.width, self.row]
 
 
 class Orientation:
@@ -54,6 +56,7 @@ class Orientation:
         self.rot = 0
         self.w = 1
         self.h = 1
+        self.row = 0
 
     def moveX(self, x):
         self.pos += self.dx * x * unit
@@ -80,6 +83,7 @@ class Orientation:
     def nextRow(self):
         self.pivot += self.dy * unit
         self.pos = self.pivot
+        self.row += 1
 
     def getCenter(self):
         return self.pos + (self.dx*self.w+self.dy*self.h)*unit/2
