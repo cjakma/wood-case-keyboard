@@ -805,17 +805,6 @@ F 3 "" H 3750 5150 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L KEYSW L_FN1
-U 1 1 58ABBCEE
-P 5250 5150
-F 0 "L_FN1" H 5200 5150 60  0000 C CNN
-F 1 "KEYSW" H 5250 5050 60  0001 C CNN
-F 2 "TheKeebrary:MX_Plate_150H" H 5250 5150 60  0001 C CNN
-F 3 "" H 5250 5150 60  0000 C CNN
-	1    5250 5150
-	1    0    0    -1  
-$EndComp
-$Comp
 L KEYSW SPACEBAR1
 U 1 1 58ABC099
 P 9750 5150
@@ -1488,9 +1477,9 @@ F 3 "" H 2700 5400 60  0000 C CNN
 $EndComp
 Text Label 1950 2350 2    60   ~ 0
 ROW1
-Text Label 1850 4000 2    60   ~ 0
+Text Label 1750 4000 2    60   ~ 0
 ROW3
-Text Label 1850 4850 2    60   ~ 0
+Text Label 1750 4850 2    60   ~ 0
 ROW4
 Text Label 1850 5650 2    60   ~ 0
 ROW5
@@ -1507,11 +1496,11 @@ F 3 "" H 12550 5150 60  0000 C CNN
 $EndComp
 Text Label 3300 1500 1    60   ~ 0
 COL1
-Text Label 7050 1150 2    60   ~ 0
+Text Label 7050 1150 1    60   ~ 0
 COL6
-Text Label 7800 1250 2    60   ~ 0
+Text Label 7800 1150 1    60   ~ 0
 COL7
-Text Label 8550 850  2    60   ~ 0
+Text Label 8550 1150 1    60   ~ 0
 COL8
 Text Label 10050 5900 3    60   ~ 0
 COL10
@@ -1714,28 +1703,6 @@ Text Label 7850 8750 0    60   ~ 0
 COL13
 Text Label 7850 8950 0    60   ~ 0
 COL11
-$Comp
-L R JMP4
-U 1 1 58AEBAD4
-P 2100 4850
-F 0 "JMP4" V 2180 4850 50  0000 C CNN
-F 1 "0" V 2100 4850 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206_HandSoldering" H 2100 4850 60  0001 C CNN
-F 3 "" H 2100 4850 60  0000 C CNN
-	1    2100 4850
-	0    1    1    0   
-$EndComp
-$Comp
-L R JMP3
-U 1 1 58AEEC71
-P 2100 4000
-F 0 "JMP3" V 2180 4000 50  0000 C CNN
-F 1 "0" V 2100 4000 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206_HandSoldering" H 2100 4000 60  0001 C CNN
-F 3 "" H 2100 4000 60  0000 C CNN
-	1    2100 4000
-	0    1    1    0   
-$EndComp
 Text Label 5600 9850 2    60   ~ 0
 ROW3
 Text Label 5600 9950 2    60   ~ 0
@@ -1762,10 +1729,10 @@ COL7
 Text Label 1750 3150 2    60   ~ 0
 ROW2
 $Comp
-L Jumper JP2:0
+L Jumper JP_R2
 U 1 1 58B1775C
 P 2050 3150
-F 0 "JP2:0" H 2050 3300 50  0000 C CNN
+F 0 "JP_R2" H 2050 3300 50  0000 C CNN
 F 1 "Jumper" H 2050 3070 50  0000 C CNN
 F 2 "Resistors_SMD:R_1206_HandSoldering" H 2050 3150 50  0001 C CNN
 F 3 "" H 2050 3150 50  0000 C CNN
@@ -1776,7 +1743,7 @@ Text Label 7850 9450 0    60   ~ 0
 COL10
 Text Label 7850 9350 0    60   ~ 0
 ROW2
-Text Label 9300 850  2    60   ~ 0
+Text Label 9300 1150 1    60   ~ 0
 COL9
 Text Label 7850 9550 0    60   ~ 0
 COL9
@@ -1818,46 +1785,24 @@ $EndComp
 $Comp
 L Jumper JP_C9re1
 U 1 1 58B261AB
-P 9300 1150
-F 0 "JP_C9re1" H 9300 1300 50  0000 C CNN
-F 1 "Jumper" H 9300 1070 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206_HandSoldering" H 9300 1150 50  0001 C CNN
-F 3 "" H 9300 1150 50  0000 C CNN
-	1    9300 1150
+P 9300 1450
+F 0 "JP_C9re1" H 9300 1600 50  0000 C CNN
+F 1 "Jumper" H 9300 1370 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" H 9300 1450 50  0001 C CNN
+F 3 "" H 9300 1450 50  0000 C CNN
+	1    9300 1450
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Jumper JP_C8
 U 1 1 58B2A275
-P 8550 1150
-F 0 "JP_C8" H 8550 1300 50  0000 C CNN
-F 1 "Jumper" H 8550 1070 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206_HandSoldering" H 8550 1150 50  0001 C CNN
-F 3 "" H 8550 1150 50  0000 C CNN
-	1    8550 1150
+P 8550 1450
+F 0 "JP_C8" H 8550 1600 50  0000 C CNN
+F 1 "Jumper" H 8550 1370 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" H 8550 1450 50  0001 C CNN
+F 3 "" H 8550 1450 50  0000 C CNN
+	1    8550 1450
 	0    -1   -1   0   
-$EndComp
-$Comp
-L R JMP1:6
-U 1 1 58AF5E65
-P 7050 1500
-F 0 "JMP1:6" V 7130 1500 50  0000 C CNN
-F 1 "0" V 7050 1500 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206_HandSoldering" H 7050 1500 60  0001 C CNN
-F 3 "" H 7050 1500 60  0000 C CNN
-	1    7050 1500
-	1    0    0    1   
-$EndComp
-$Comp
-L R JMP1:7
-U 1 1 58B0E3FF
-P 7800 1500
-F 0 "JMP1:7" V 7880 1500 50  0000 C CNN
-F 1 "0" V 7800 1500 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206_HandSoldering" H 7800 1500 60  0001 C CNN
-F 3 "" H 7800 1500 60  0000 C CNN
-	1    7800 1500
-	1    0    0    1   
 $EndComp
 $Comp
 L Jumper JP_C10
@@ -1880,17 +1825,6 @@ F 2 "Resistors_SMD:R_1206_HandSoldering" H 9300 3800 50  0001 C CNN
 F 3 "" H 9300 3800 50  0000 C CNN
 	1    9300 3800
 	0    -1   -1   0   
-$EndComp
-$Comp
-L R JMP4:4
-U 1 1 58B58829
-P 5550 4650
-F 0 "JMP4:4" V 5630 4650 50  0000 C CNN
-F 1 "0" V 5550 4650 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206_HandSoldering" H 5550 4650 60  0001 C CNN
-F 3 "" H 5550 4650 60  0000 C CNN
-	1    5550 4650
-	1    0    0    -1  
 $EndComp
 $Comp
 L Jumper JP_GND2
@@ -2025,8 +1959,6 @@ Connection ~ 6300 1850
 Connection ~ 5550 1850
 Connection ~ 4800 1850
 Connection ~ 4050 1850
-Wire Wire Line
-	8550 1450 8550 4100
 Connection ~ 10050 4350
 Connection ~ 10050 2650
 Connection ~ 10050 3500
@@ -2317,18 +2249,14 @@ Connection ~ 3450 3150
 Connection ~ 4200 3150
 Connection ~ 4950 3150
 Connection ~ 5700 3150
-Wire Wire Line
-	5550 4900 5550 5900
 Connection ~ 5550 5150
 Wire Wire Line
-	5550 1500 5550 4400
+	5550 1500 5550 4500
 Wire Wire Line
 	4800 1500 4800 4500
 Connection ~ 3300 5150
 Connection ~ 4050 5150
 Connection ~ 4800 4350
-Wire Wire Line
-	7050 1150 7050 1250
 Wire Wire Line
 	7050 1750 7050 1850
 Wire Wire Line
@@ -2530,8 +2458,6 @@ $EndComp
 Wire Wire Line
 	4800 5100 4800 5900
 Wire Wire Line
-	9300 1450 9300 3500
-Wire Wire Line
 	3300 1500 3300 5150
 $Comp
 L Jumper JP_C5
@@ -2546,4 +2472,76 @@ F 3 "" H 6300 1450 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	6300 1750 6300 3500
+$Comp
+L Jumper JP_C6
+U 1 1 58ADE8EE
+P 7050 1450
+F 0 "JP_C6" H 7050 1600 50  0000 C CNN
+F 1 "Jumper" H 7050 1370 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" H 7050 1450 50  0001 C CNN
+F 3 "" H 7050 1450 50  0000 C CNN
+	1    7050 1450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Jumper JP_C7
+U 1 1 58ADF16F
+P 7800 1450
+F 0 "JP_C7" H 7800 1600 50  0000 C CNN
+F 1 "Jumper" H 7800 1370 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" H 7800 1450 50  0001 C CNN
+F 3 "" H 7800 1450 50  0000 C CNN
+	1    7800 1450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9300 1750 9300 3500
+Wire Wire Line
+	8550 1750 8550 3500
+$Comp
+L Jumper JP_C4
+U 1 1 58AE3471
+P 5550 4800
+F 0 "JP_C4" H 5550 4950 50  0000 C CNN
+F 1 "Jumper" H 5550 4720 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" H 5550 4800 50  0001 C CNN
+F 3 "" H 5550 4800 50  0000 C CNN
+	1    5550 4800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L KEYSW L_FN1
+U 1 1 58ABBCEE
+P 5250 5150
+F 0 "L_FN1" H 5200 5150 60  0000 C CNN
+F 1 "KEYSW" H 5250 5050 60  0001 C CNN
+F 2 "TheKeebrary:MX_Plate_150H" H 5250 5150 60  0001 C CNN
+F 3 "" H 5250 5150 60  0000 C CNN
+	1    5250 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 5100 5550 5900
+$Comp
+L Jumper JP_R3
+U 1 1 58AE5187
+P 2050 4000
+F 0 "JP_R3" H 2050 4150 50  0000 C CNN
+F 1 "Jumper" H 2050 3920 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" H 2050 4000 50  0001 C CNN
+F 3 "" H 2050 4000 50  0000 C CNN
+	1    2050 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper JP_R4
+U 1 1 58AE60FD
+P 2050 4850
+F 0 "JP_R4" H 2050 5000 50  0000 C CNN
+F 1 "Jumper" H 2050 4770 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" H 2050 4850 50  0001 C CNN
+F 3 "" H 2050 4850 50  0000 C CNN
+	1    2050 4850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

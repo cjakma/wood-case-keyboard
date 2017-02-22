@@ -1772,9 +1772,9 @@ F 3 "" H 2050 3150 50  0000 C CNN
 	1    2050 3150
 	1    0    0    -1  
 $EndComp
-Text Label 7850 9350 0    60   ~ 0
-COL10
 Text Label 7850 9450 0    60   ~ 0
+COL10
+Text Label 7850 9350 0    60   ~ 0
 ROW2
 Text Label 9300 850  2    60   ~ 0
 COL9
