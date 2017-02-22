@@ -27,8 +27,9 @@ zdrill=-0.08
 drill-feed=3
 drill-speed=20000
 
-#offset=0.006
+# offset=0.006
+offset=0.004
 # generate voronoi regions
-offset=1.0
+# offset=1.0
 dpi=1000
 #max-deviation=0
