@@ -16,21 +16,22 @@ top_cutout_depth = lip_depth        +
 front_height= 19.5;
 case_tilt=10;
 plate_tilt=9.5;
-round = 7;
+round = 6;
 margin=[9, 3];
 
 screw_holes = [
-    [0.14*inch, 1.51*inch],
-    [11.1*inch, 1.51*inch],
-    [1.005*inch, 2.635*inch],
-    [5.06*inch, 1.87*inch],
-    [7.51*inch, 0.38*inch],
-    [10.249*inch, 2.636*inch],
-];
+    [0.2, 2.0],
+    [14.8, 2.5],
+    [1.375, 3.5],
+    [6.75, 2.5],
+    [9.5, 0.5],
+    [13.625, 3.5]
+]*unit;
 
 x = [1, 0, 0];
 y = [0, 1, 0];
 z = [0, 0, 1];
+
 
 /* plate_width = plate_width - 10; */
 
@@ -109,9 +110,9 @@ module case(
             * rotation(180*z)
         ];
         transform2 = [for (i = interval)
-            translation([0, i, traj(i)-round*2+0.1])
+            translation([0, i, traj(i)-round*3])
             * rotation(-90*x)
-            * scaling([1, 2, 1])
+            * scaling([1, 3, 1])
         ];
         intersection() {
             union() {
@@ -137,12 +138,17 @@ module top_cutout1()
 
 module top_cutout2()
 {
-    r = 5;
     rounding(r=3.5, $fn=20)
     difference() {
         translate(plate_width*y) inset(r=2, $fn=10) polygon(plate_coords);
-        for (i = [0 : 1 : len(screw_holes)-1]) translate(screw_holes[i]) circle(r=r);
+        for (i = [0 : 1 : len(screw_holes)-1]) translate(screw_holes[i]) circle(r=5);
     }
+}
+
+module top_cutout3()
+{
+    size = [11, 11];
+    translate([unit, plate_width]) translate(-size+size[0]/2*x) square(size);
 }
 
 module top_drill()
@@ -262,18 +268,24 @@ module wood_block()
 module preview() {
     color([70, 50, 15]/255)
     difference() {
-        translate(4*y)
+        translate(3*y)
         case(plate_width=plate_width-7);
 
         translate(front_height*z) rotate(plate_tilt*x)
         translate(-(top_cutout_depth-lead_margin)*z)
         linear_extrude(height=top_cutout_depth+1)
+        rounding(d=1, $fn=12)
         top_cutout1();
 
         translate(front_height*z) rotate(plate_tilt*x)
         translate(-(top_cutout_depth)*z)
         linear_extrude(height=top_cutout_depth+1)
         top_cutout2();
+
+        translate(front_height*z) rotate(plate_tilt*x)
+        translate(-(top_cutout_depth+4.1)*z)
+        linear_extrude(height=top_cutout_depth+1)
+        top_cutout3();
 
         translate(front_height*z) rotate(plate_tilt*x)
         translate(-(top_cutout_depth)*z)
@@ -286,32 +298,36 @@ module preview() {
     translate(-(top_cutout_depth-1.65)*z)
     pcb();
 
-    /* color("silver") */
-    /* translate(front_height*z) */
-    /* rotate(plate_tilt*x) */
-    /* translate(-(top_cutout_depth-1.65-5)*z) */
-    /* plate(); */
+    color("silver")
+    translate(front_height*z)
+    rotate(plate_tilt*x)
+    translate(-(top_cutout_depth-1.65-5)*z)
+    plate();
 
-    /* translate(front_height*z) */
-    /* rotate(plate_tilt*x) */
-    /* translate(-(lip_depth-6.6)*z) */
-    /* color([255, 255, 204]/255) */
-    /* keycaps(); */
+    translate(front_height*z)
+    rotate(plate_tilt*x)
+    translate(-(lip_depth-6.6)*z)
+    color([255, 255, 204]/255)
+    keycaps();
 
     /* translate([-19, -15, 0]) */
     /* % wood_block(); */
 }
 
 
-/* rotate(-10*x) */
+/* rotate(-plate_tilt*x) */
 intersection()
 {
-    translate([0, 15, 0]) preview();
-    /* cube([60, 150, 50]); */
+    /* translate([0, 15, 0]) preview(); */
+    /* translate(20*x) cube([60, 150, 50]); */
 }
 
-/* plate(); */
+/* top_cutout3(); */
+top_cutout2();
 /* switch_cutout(); */
+/* switch_cutout(); */
+/* color("red") top_drill(); */
+/* %pcb(); */
 
 /* translate([55, 0, 0]) */
 /* %cube([10, 10, 5]); */
