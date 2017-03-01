@@ -316,14 +316,16 @@ module preview() {
 
 
 /* rotate(-plate_tilt*x) */
-intersection()
-{
+/* intersection() */
+/* { */
     /* translate([0, 15, 0]) preview(); */
     /* translate(20*x) cube([60, 150, 50]); */
-}
+/* } */
 
+case();
+/* translate([0, 15, 0]) preview(); */
 /* top_cutout3(); */
-top_cutout2();
+/* top_cutout2(); */
 /* switch_cutout(); */
 /* switch_cutout(); */
 /* color("red") top_drill(); */
