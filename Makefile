@@ -10,8 +10,8 @@ STL_TARGETS = $(patsubst $(MODEL_DIR)/%.scad,$(STL_DIR)/%.stl,$(wildcard $(MODEL
 STL_TARGETS := $(filter-out $(STL_DIR)/params.stl,$(STL_TARGETS))
 STL_TARGETS := $(filter-out $(STL_DIR)/preview.stl,$(STL_TARGETS))
 
-GCODE_TARGETS = shape_left_rough.gcode
-				# shape_left_finish.gcode
+GCODE_TARGETS = shape_left_rough.gcode \
+				shape_left_finish.gcode
 GCODE_TARGETS := $(patsubst %.gcode,$(GCODE_DIR)/%.gcode,$(GCODE_TARGETS))
 
 COMMON_CONF = --boundary-mode=outside \
