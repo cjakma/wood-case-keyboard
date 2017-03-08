@@ -3,3 +3,4 @@
 
 *.tar.gz
 pycam*/
+.DS_Store

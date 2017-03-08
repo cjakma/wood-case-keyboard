@@ -11,7 +11,9 @@ STL_TARGETS := $(filter-out $(STL_DIR)/params.stl,$(STL_TARGETS))
 STL_TARGETS := $(filter-out $(STL_DIR)/preview.stl,$(STL_TARGETS))
 
 GCODE_TARGETS = shape_left_rough.gcode \
-				shape_left_finish.gcode
+				shape_left_finish.gcode \
+				shape_right_rough.gcode \
+				shape_right_finish.gcode
 GCODE_TARGETS := $(patsubst %.gcode,$(GCODE_DIR)/%.gcode,$(GCODE_TARGETS))
 
 COMMON_CONF = --boundary-mode=outside \
@@ -26,7 +28,7 @@ COMMON_CONF = --boundary-mode=outside \
 
 ROUGH_CONF = --tool-size=6 \
 			 --tool-feedrate=1400 \
-			 --process-path-direction=xy \
+			 --process-path-direction=x \
 			 --process-path-strategy=layer \
 			 --process-material-allowance=0.5 \
 			 --process-step-down=1 \
@@ -41,10 +43,10 @@ FINISH_CONF = --tool-size=6 \
 
 BOUND = --bounds-lower=0,0,-0.5 \
 		--bounds-upper=330,130,34
-BOUND_L = --bounds-lower=0,0,-0.5 \
+BOUND_L = --bounds-lower=-5,8,-0.5 \
 		  --bounds-upper=160,130,34
 BOUND_R = --bounds-lower=80,0,-0.5 \
-		  --bounds-upper=250,130, 34
+		  --bounds-upper=245,130,34
 BOUND_P = --bounds-lower=-0.5,-0.5,-0.5 \
 		  --bounds-upper=287.15,95.75,34
 
@@ -73,6 +75,15 @@ $(GCODE_DIR)/shape_left_rough.gcode: shape_left.stl
 $(GCODE_DIR)/shape_left_finish.gcode: shape_left.stl
 		mkdir -p $(GCODE_DIR)
 		$(PYCAM) --export-gcode=$@ $(COMMON_CONF) $(FINISH_CONF) $(BOUND_L) $<
+
+$(GCODE_DIR)/shape_right_rough.gcode: shape_right.stl
+		mkdir -p $(GCODE_DIR)
+		$(PYCAM) --export-gcode=$@ $(COMMON_CONF) $(ROUGH_CONF) $(BOUND_R) $<
+
+$(GCODE_DIR)/shape_right_finish.gcode: shape_right.stl
+		mkdir -p $(GCODE_DIR)
+		$(PYCAM) --export-gcode=$@ $(COMMON_CONF) $(FINISH_CONF) $(BOUND_R) $<
+
 
 clean:
 		rm stl/*
