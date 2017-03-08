@@ -25,7 +25,7 @@ COMMON_CONF = --number-of-processes=4\
 			  --gcode-no-start-stop-spindle\
 			  --gcode-path-mode=exact_path
 
-ROUGH_CONF = --boundary-mode=outside \
+ROUGH_CONF = --boundary-mode=inside \
 			 --tool-size=6 \
 			 --tool-feedrate=1400 \
 			 --process-path-direction=x \
