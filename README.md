@@ -83,12 +83,12 @@ the exactly same machine and materials I have.
     - Place head to left top corner
     - Set the position as origin
     - Send $H
-    - Note current coordinate (it was [-5, 5])
+    - Note current coordinate (it was [-1.219, 33.376])
     - Remove all comments from `gcode/shape_left_finish.ngc`
     - Add these lines in `gcode/shape_left_rough.ngc` at line 7, and `gcode/shape_left_finish.ngc` at line 10.
 
             $H 
-            G92 X-5 Y135 Z34
+            G92 X-6.219 Y163.376 Z34
 
     - Change to 6mm end mill
     - Start milling with `gcode/shape_left_rough.ngc` followed by `gcode/shape_left_finish`
