@@ -2,3 +2,6 @@
 *.gcode
 *.png
 *.dxf
+
+*.tar.gz
+pycam*/

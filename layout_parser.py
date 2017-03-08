@@ -163,14 +163,12 @@ if __name__ == "__main__":
     shapes = [sw.getShape() for sw in switches]
     plate = ops.cascaded_union(shapes)
 
-    def save(name, val):
+    def echo(name, val):
         print(name, '=', val, ';')
 
     minx, miny, maxx, maxy = plate.bounds
-    save('plate_width', maxy - miny)
-    save('plate_length', maxx - minx)
-    save('plate_coords', [list(coord) for coord in plate.exterior.coords])
-    save('switch_info', [sw.toList() for sw in switches])
-
-#     plot_polygon(plate)
-#     pl.show()
+    #  save('plate_width', maxy - miny)
+    #  save('plate_length', maxx - minx)
+    #  save('plate_coords', [list(coord) for coord in plate.exterior.coords])
+    echo('plate_size', '[%f, %f]' % (maxx-minx, maxy-miny))
+    echo('switch_info', [sw.toList() for sw in switches])
