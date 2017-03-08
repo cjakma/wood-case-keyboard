@@ -78,19 +78,59 @@ These are the specific steps I had done. These are useless unless you have
 the exactly same machine and materials I have.
 
 1. Shape left half
-    * Fix the wood block with double-sided tape
-    * Set 1mm end mill.
-    * Place head to left top corner.
-    * Set the position as origin
-    * Send $H
-    * Note current coordinate (it was [-5, 5])
-    * Add these lines in `gcode/shape_left_rough.ngc` at line 7, and `gcode/shape_left_finish.ngc` at line 10.
+    - Fix the wood block with double-sided tape
+    - Set 1mm end mill.
+    - Place head to left top corner
+    - Set the position as origin
+    - Send $H
+    - Note current coordinate (it was [-5, 5])
+    - Remove all comments from `gcode/shape_left_finish.ngc`
+    - Add these lines in `gcode/shape_left_rough.ngc` at line 7, and `gcode/shape_left_finish.ngc` at line 10.
 
-    $H
-    G92 X-5 Y135 Z34
+            $H 
+            G92 X-5 Y135 Z34
 
-    * Change to 6mm end mill
-    * Start milling with `gcode/shape_left_rough.ngc` followed by `gcode/shape_left_finish`
+    - Change to 6mm end mill
+    - Start milling with `gcode/shape_left_rough.ngc` followed by `gcode/shape_left_finish`
+2. Shape right half
+    - Take off the block
+    - Re attach the block 8 cm left to the original position.
+    - Change to 1mm end mill
+    - place head to right top corner
+    - Set position as origin
+    - Send $H
+    - Note current coordinate (it was [-100, 5])
+    - Remove all comments from `gcode/shape_right_finish.ngc`
+    - Add these lines in `gcode/shape_right_rough.ngc` at line 7, and `gcode/shape_right_finish.ngc` at line 10.
+
+            $H 
+            G92 X-5 Y135 Z34
+
+    - Change to 6mm end mill
+    - Start milling with `gcode/shape_left_rough.ngc` followed by `gcode/shape_left_finish`
+    - Sand the block
+3. Lip cutout
+    - Print two `stl/clamp_front.stl` and one`stl/clamp_back.stl` with your 3D Printer
+    - Take off the block
+    - Fix the block at the center with the clamps.
+    - Draw square to cut out at top. The size is specified in `model/params.scad`
+    - Make sure that machine's build space covers the square
+    - change to 1mm end mill
+    - Place head to left top corner of the square
+    - Set position as origin
+    - Send $H
+    - Note current coordinate (it was [-100, 5])
+    - Add These lines in `gcode/top_cutout.ngc` at line 7
+
+            $H
+            G92 X...
+
+    - Change to 6mm end mill
+    - Start milling with `gcode/top_cutout.ngc`
+    
+
+
+
 
 
 # Requirements
