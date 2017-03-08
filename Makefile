@@ -3,7 +3,7 @@ STL_DIR = stl
 GCODE_DIR = gcode
 
 PYCAM = pycam-0.5.1/pycam
-SCAD = openscad-nightly
+SCAD = $(shell type -p openscad-nightly || echo /Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD)
 
 VPATH = $(MODEL_DIR):$(STL_DIR):$(GCODE_DIR)
 STL_TARGETS = $(patsubst $(MODEL_DIR)/%.scad,$(STL_DIR)/%.stl,$(wildcard $(MODEL_DIR)/*.scad))
