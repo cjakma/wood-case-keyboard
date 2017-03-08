@@ -35,13 +35,13 @@ Download the source
     cd diy_hhkb
 
 Install PyCam(https://github.com/SebKuzminsky/pycam).
-It uses both version 0.6 and v0.5.1, Because v0.6 generally performs better,
-but failed to produce proper toolpath in some cases.
-Note that those two should be under the repository to make make command work.
+I used version 0.5.1, because I failed to use v0.6 in command line.
+I suspect that there is internal changes in v0.6 but their command line
+interface is not updated properly. If you ignore Makefile thing and want to 
+use GUI, I recommend you to try v0.6.
+Note that those two should be under the repository to make command work.
 
     sudo apt-get install python-gtk2 python-opengl python-gtkglext1 python-rsvg python-pyode python-guppy
-    wget https://github.com/SebKuzminsky/pycam/archive/v0.6.tar.gz
-    tar xvzf v0.6.tar.gz
     wget https://github.com/SebKuzminsky/pycam/archive/v0.5.1.tar.gz
     tar xvzf v0.5.1.tar.gz
 
@@ -64,18 +64,25 @@ The layout of the keyboard can be changed.
 compatible layout data. If you want build with your own layout, copy 
 Raw data from http://www.keyboard-layout-editor.com/ and make a file with it.
 You can feed one of the layout by following command.
-Note that only a limited commands are supported.
 
     python3 layout_parser.py layout/hhkb.layout > model/params.scad
+
+Note that layout parser is partially implemented, so complex layout may not 
+work properly.
 
 ### Toolpath generation
 Makefile has settings for each tasks. 
 You have to manually modify the file to match your machine.
 Or use any CAM software of your preference.
+Following command will generate only STL models but final gcode.
 
-## Procedure to milling
-These are the specific steps I had done. These are useless unless you have 
-the exactly same machine and materials I have.
+    make stl
+
+## Milling procedure 
+I had to split the model into two parts, because the shapeoko I have was not 
+big enough to produce the model at once. The list below are the specific steps
+I had done, to work with splited model.
+So these are useless unless you have the exactly same machine and materials I have.
 
 1. Shape left half
     - Fix the wood block with double-sided tape
@@ -84,14 +91,14 @@ the exactly same machine and materials I have.
     - Set the position as origin
     - Send $H
     - Note current coordinate (it was [-1.219, 33.376])
-    - Remove all comments from `gcode/shape_left_finish.ngc`
-    - Add these lines in `gcode/shape_left_rough.ngc` at line 7, and `gcode/shape_left_finish.ngc` at line 10.
+    - Remove all comments from `gcode/shape_left_finish.gcode`, cause they are not compatible with GRBL
+    - Add these lines in `gcode/shape_left_rough.gcode` at line 7, and `gcode/shape_left_finish.gcode` at line 7.
 
             $H 
             G92 X-6.219 Y163.376 Z34
 
     - Change to 6mm end mill
-    - Start milling with `gcode/shape_left_rough.ngc` followed by `gcode/shape_left_finish`
+    - Start milling with `gcode/shape_left_rough.gcode` followed by `gcode/shape_left_finish.gcode`
 2. Shape right half
     - Take off the block
     - Re attach the block 8 cm left to the original position.
@@ -100,8 +107,8 @@ the exactly same machine and materials I have.
     - Set position as origin
     - Send $H
     - Note current coordinate (it was [-100, 5])
-    - Remove all comments from `gcode/shape_right_finish.ngc`
-    - Add these lines in `gcode/shape_right_rough.ngc` at line 7, and `gcode/shape_right_finish.ngc` at line 10.
+    - Remove all comments from `gcode/shape_right_finish.gcode`
+    - Add these lines in `gcode/shape_right_rough.gcode` at line 7, and `gcode/shape_right_finish.gcode` at line 10.
 
             $H 
             G92 X-5 Y135 Z34

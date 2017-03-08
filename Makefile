@@ -52,8 +52,12 @@ BOUND_P = --bounds-lower=-0.5,-0.5,-0.5 \
 		  --bounds-upper=287.15,95.75,34
 
 
-.PHONY: all clean
+.PHONY: all stl clean
 all: $(STL_TARGETS) $(GCODE_TARGETS)
+
+stl: $(STL_TARGETS)
+
+gcode: $(GCODE_TARGETS)
 
 $(STL_DIR)/%.stl: %.scad 
 		mkdir -p $(STL_DIR)
