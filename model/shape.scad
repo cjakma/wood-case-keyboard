@@ -31,9 +31,9 @@ module shape()
     module side() {
         function shape(r) = [for (xy = half_circle) [xy[0]*r, xy[1]*r]];
         interval= concat(
-                [for (i=[-20:30/40:10]) i],
+                [for (i=[-10:20/30:10]) i],
                 [for (i=[10:(py-20)/20:py-10]) i],
-                [for (i=[py-10:40/30:py+30]) i]);
+                [for (i=[py-10:20/20:py+10]) i]);
         transform1 = [for (i = interval)
             translation([0, i, traj(i)])
             * rotation((-90+atan(devi(i)))*x())
@@ -136,6 +136,7 @@ function xmax() = px+mx+roundness;
 function front_height() = front_height;
 function tilt() = tilt;
 function plate_size() = plate_size;
+function block_size() = block_size;
 function block_height() = block_size[2];
 
-half_circle = [for (i = [0 : 180/16 : 180]) [cos(i), sin(i)]];
+half_circle = [for (i = [0 : 180/12 : 180]) [cos(i), sin(i)]];
