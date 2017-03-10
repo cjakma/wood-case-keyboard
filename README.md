@@ -135,11 +135,6 @@ So these are useless unless you have the exactly same machine and materials I ha
     - Change to 6mm end mill
     - Start milling with `gcode/top_cutout.ngc`
     
-
-
-
-
-
 # Requirements
 
 # Machine
