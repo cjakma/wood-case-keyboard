@@ -13,8 +13,10 @@ STL_TARGETS := $(filter-out $(STL_DIR)/preview.stl,$(STL_TARGETS))
 GCODE_TARGETS = shape_left_rough.gcode \
 				shape_left_finish.gcode \
 				shape_right_rough.gcode \
-				shape_right_finish.gcode
-GCODE_TARGETS := $(patsubst %.gcode,$(GCODE_DIR)/%.gcode,$(GCODE_TARGETS))
+				shape_right_finish.gcode \
+				top_cutout_rough.gcode \
+				top_cutout_finish.gcode \
+				bottom_cutout_rough.gcode
 
 COMMON_CONF = --number-of-processes=4\
 			  --progress=bar\
@@ -35,27 +37,31 @@ ROUGH_CONF = --boundary-mode=inside \
 			 --process-overlap-percent=60 \
 
 FINISH_CONF = --boundary-mode=inside \
-			  --tool-size=6 \
-			  --tool-feedrate=2000 \
-			  --process-path-direction=y \
-			  --process-path-strategy=surface \
-			  --process-material-allowance=0.5 \
-			  --process-overlap-percent=90 \
-
-FINISH_CONF = --boundary-mode=inside \
 			  --tool-size=1 \
 			  --tool-feedrate=2000 \
 			  --process-path-direction=y \
 			  --process-path-strategy=surface \
 			  --process-material-allowance=0.5 \
-			  --process-overlap-percent=50 \
+			  --process-overlap-percent=0 \
+
+# FINISH_CONF = --boundary-mode=inside \
+			  # --tool-size=1 \
+			  # --tool-feedrate=2000 \
+			  # --process-path-direction=y \
+			  # --process-path-strategy=surface \
+			  # --process-material-allowance=0.5 \
+			  # --process-overlap-percent=50 \
 
 BOUND = --bounds-lower=0,0,-0.5 \
 		--bounds-upper=330,130,34
 BOUND_L = --bounds-lower=-5,0,8 \
 		  --bounds-upper=160,130,34
+BOUND_L_FINISH = --bounds-lower=-5,-4,8 \
+				 --bounds-upper=160,125,34
 BOUND_R = --bounds-lower=80,0,8 \
 		  --bounds-upper=245,130,34
+BOUND_R_FINISH = --bounds-lower=80,-4,8 \
+				 --bounds-upper=245,125,34
 BOUND_P = --bounds-lower=-0.5,-0.5,-0.5 \
 		  --bounds-upper=287.15,95.75,34
 
@@ -85,7 +91,7 @@ $(GCODE_DIR)/shape_left_rough.gcode: shape_left.stl
 
 $(GCODE_DIR)/shape_left_finish.gcode: shape_left.stl
 		mkdir -p $(GCODE_DIR)
-		$(PYCAM) --export-gcode=$@ $(COMMON_CONF) $(FINISH_CONF) $(BOUND_L) $<
+		$(PYCAM) --export-gcode=$@ $(COMMON_CONF) $(FINISH_CONF) $(BOUND_L_FINISH) $<
 
 $(GCODE_DIR)/shape_right_rough.gcode: shape_right.stl
 		mkdir -p $(GCODE_DIR)
@@ -93,7 +99,7 @@ $(GCODE_DIR)/shape_right_rough.gcode: shape_right.stl
 
 $(GCODE_DIR)/shape_right_finish.gcode: shape_right.stl
 		mkdir -p $(GCODE_DIR)
-		$(PYCAM) --export-gcode=$@ $(COMMON_CONF) $(FINISH_CONF) $(BOUND_R) $<
+		$(PYCAM) --export-gcode=$@ $(COMMON_CONF) $(FINISH_CONF) $(BOUND_R_FINISH) $<
 	
 $(GCODE_DIR)/top_cutout_rough.gcode: top_cutout.stl
 		mkdir -p $(GCODE_DIR)
