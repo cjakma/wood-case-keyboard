@@ -1,9 +1,10 @@
 include <params.scad>
 use <shape.scad>
 use <scad-utils/morphology.scad>
+use <switch_cutout.scad>
 
 // maximum distance from top of your keyboard to switch mount surface.
-lip_depth = 8;
+lip_depth = 7.5;
 
 // margin between case and switches
 margin = 0.4;
@@ -30,6 +31,10 @@ module top_cutout()
         translate((block_height()-lip_depth)*z())
         linear_extrude(height=lip_depth+0.1)
         top_cutout_2D();
+
+        translate((block_height()-lip_depth()-3.6-0.5)*z())
+        linear_extrude(height=lip_depth()+3.6+0.1+0.5)
+        switch_cutout_2D();
     }
 }
 
