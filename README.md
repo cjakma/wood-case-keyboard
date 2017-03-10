@@ -102,27 +102,20 @@ So these are useless unless you have the exactly same machine and materials I ha
 2. Shape right half
     - Take off the block
     - Re attach the block 8 cm left to the original position.
-    - Change to 1mm end mill
-    - place head to right top corner
-    - Set position as origin
-    - Send $H
-    - Note current coordinate (it was [-100, 5])
     - Remove all comments from `gcode/shape_right_finish.gcode`
     - Add these lines in `gcode/shape_right_rough.gcode` at line 7, and `gcode/shape_right_finish.gcode` at line 10.
 
             $H 
-            G92 X-5 Y135 Z34
+            G92 X-1.219 Y163.376 Z34
 
-    - Change to 6mm end mill
     - Start milling with `gcode/shape_left_rough.ngc` followed by `gcode/shape_left_finish`
     - Sand the block
 3. Lip cutout
-    - Print two `stl/clamp_front.stl` and one`stl/clamp_back.stl` with your 3D Printer
-    - Take off the block
-    - Fix the block at the center with the clamps.
+    - Print two `stl/tilt_holder.stl`.
+    - fix them bottom of the block, with 4 screws.
+    - fix them to to CNC with remaining screw holes.
     - Draw square to cut out at top. The size is specified in `model/params.scad`
     - Make sure that machine's build space covers the square
-    - change to 1mm end mill
     - Place head to left top corner of the square
     - Set position as origin
     - Send $H
@@ -132,8 +125,9 @@ So these are useless unless you have the exactly same machine and materials I ha
             $H
             G92 X...
 
-    - Change to 6mm end mill
     - Start milling with `gcode/top_cutout.ngc`
+    - Change the tool to 1mm one
+    - Start milling with `gcode/top_cutout_finish.ngc`
     
 # Requirements
 
