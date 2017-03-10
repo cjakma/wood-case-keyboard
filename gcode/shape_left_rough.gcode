@@ -4,36 +4,12 @@ G80 (cancel modal motion)
 G54 (select coordinate system 1)
 G90 (disable incremental moves)
 G21 (metric)
+($H)
+G28
+G92 X-6.219 Y163.376 Z34
 F1400.00000
 S250.00000
 G61 (exact path mode)
-;PYCAM_TOOLPATH_SETTINGS: START
-;[Bounds]
-;maxz = 34.0
-;maxx = 157.0
-;maxy = 127.0
-;minx = -2.0
-;miny = 3.0
-;minz = 8.0
-;
-;[Tool]
-;torus_radius = 0.125
-;shape = CylindricalCutter
-;tool_radius = 3.0
-;feedrate = 1400.0
-;
-;[Process]
-;engrave_offset = 0.0
-;step_down = 1.0
-;generator = PushCutter
-;postprocessor = SimpleCutter
-;overlap_percent = 60
-;milling_style = ignore
-;material_allowance = 0.5
-;pocketing_type = none
-;path_direction = x
-;
-;PYCAM_TOOLPATH_SETTINGS: END
 G0 Z35.00000
  X-2.00000 Y3.00000
 G1 Z34.00000
