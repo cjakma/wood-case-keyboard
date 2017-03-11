@@ -11,15 +11,24 @@ module switch_cutout_2D()
         mirror(d) children();
     }
     module stabil() {
-        translate([-0.131, -0.26]*inch())
-        square([0.262, 0.484]*inch());
+        translate([0, -0.03]*inch()) {
+            square([0.13, 0.55]*inch(), true);
+            mirrored(y()) translate((0.55*inch()-2)/2*y()) square([0.13*inch()+1, 2], true);
+        }
+    }
+    module switch() {
+        square(0.55*inch(), true);
+        mirrored(x()) mirrored(y())
+        translate(0.1972/2*inch()*y()) square([0.6140/2, (0.55-0.1972)/2]*inch());
     }
     module cutout(unit) {
-        square(0.551*inch(), true);
+        if (unit == 6)  translate(0.5*unit()*x()) switch();
+        else            switch();
         mirrored(x()) {
-            if (2 <= unit && unit < 3)   {translate(-0.94/2*inch()*x()) stabil(); } 
-            if (3 <= unit && unit < 4.5) {translate(-1.50/2*inch()*x()) stabil(); } 
-            if (unit == 6)               {translate(43.5*x()) stabil(); }
+            if (unit == 6)                    {translate(2.5*unit()*x())     stabil(); }
+            else if (2 <= unit && unit < 3)   {translate(-0.94/2*inch()*x()) stabil(); } 
+            else if (3 <= unit && unit < 4.5) {translate(-1.50/2*inch()*x()) stabil(); } 
+            else if (4.5 <= unit && unit < 8) {translate(-5.25/2*inch()*x()) stabil(); } 
         }
     }
     translate(plate_size()[1]*y())
