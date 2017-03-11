@@ -21,7 +21,7 @@ roundness = 10;
 block_size = [330, 130, 34];
 
 
-module shape()
+module base()
 {
     echo("size: ",[xmax()-xmin(), ymax()-ymin()]);
     echo("x: ", [xmin(), xmax()]);
@@ -62,7 +62,7 @@ module shape()
     translate((px+mx)*x()) side();
     %translate([xmin(), ymin()]) cube([xmax()-xmin(), ymax()-ymin(), 36]);
 }
-translate(-[xmin(), ymin()]) shape();
+translate(-[xmin(), ymin()]) base();
 
 
 function inch() = 25.4;
@@ -137,6 +137,7 @@ function front_height() = front_height;
 function tilt() = tilt;
 function plate_size() = plate_size;
 function block_size() = block_size;
+function base_size() = [xmax()-xmin(), ymax()-ymin(), block_size[2]];
 function block_height() = block_size[2];
 
 half_circle = [for (i = [0 : 180/12 : 180]) [cos(i), sin(i)]];
