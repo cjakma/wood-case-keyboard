@@ -3,20 +3,20 @@
 
 # You may want to uncomment and change those in local project files
 #front=Gen7Board.front.gbr
-back=hhkb_400-B.Cu.gbr
-drill=hhkb_400.drl
-#outline=contour.back.gbr
+back=hhkb-B.Cu.gbr
+# outline=hhkb-Edge.Cuts.gbr
+drill=hhkb.drl
 #verbose
 
 # parameters for isolation routing / engraving / etching
 zwork=-0.008
-zsafe=0.8
+zsafe=0.4
 zchange=1.0
 mill-feed=6
 mill-speed=30000
 
 # parameters for cutting out boards
-cutter-diameter=0.059055118
+cutter-diameter=0.03937007874015748
 zcut=-0.08
 cut-feed=3
 cut-speed=20000
@@ -27,9 +27,8 @@ zdrill=-0.08
 drill-feed=3
 drill-speed=20000
 
-# offset=0.006
-offset=0.004
+# offset=0.004
 # generate voronoi regions
-# offset=1.0
+offset=1.0
 dpi=1000
 #max-deviation=0

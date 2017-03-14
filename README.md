@@ -116,17 +116,12 @@ So these are useless unless you have the exactly same machine and materials I ha
     - fix them to to CNC with remaining screw holes.
     - Draw square to cut out at top. The size is specified in `model/params.scad`
     - Make sure that machine's build space covers the square
-    - Place head to left top corner of the square
-    - Set position as origin
-    - Send $H
-    - Note current coordinate (it was [-100, 5])
-    - Add These lines in `gcode/top_cutout.ngc` at line 7
-
-            $H
-            G92 X...
-
-    - Start milling with `gcode/top_cutout.ngc`
+    - Place head to bottom left corner of the square
+    - Send `G92 X0 Y0 Z34`
+    - Start milling with `gcode/top_cutout_rough.ngc`
     - Change the tool to 1mm one
+    - Place head to bottom left corner of the square
+    - Send `G92 X0 Y0 Z34`
     - Start milling with `gcode/top_cutout_finish.ngc`
     
 # Requirements

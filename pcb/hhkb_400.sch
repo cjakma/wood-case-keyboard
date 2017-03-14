@@ -1443,17 +1443,6 @@ F 3 "" H 9450 5400 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L D D5:3
-U 1 1 58ACC58C
-P 4950 5400
-F 0 "D5:3" V 4800 5350 60  0000 C CNN
-F 1 "D" V 5100 5350 60  0001 C CNN
-F 2 "Diodes_SMD:D_SOD-123" H 4950 5400 60  0001 C CNN
-F 3 "" H 4950 5400 60  0000 C CNN
-	1    4950 5400
-	-1   0    0    1   
-$EndComp
-$Comp
 L D D5:2
 U 1 1 58ACC775
 P 3450 5400
@@ -1897,7 +1886,6 @@ Connection ~ 2700 3150
 Connection ~ 2700 4850
 Connection ~ 2700 5650
 Connection ~ 3450 5650
-Connection ~ 4950 5650
 Connection ~ 9450 5650
 Connection ~ 9450 4000
 Connection ~ 8700 4000
@@ -2041,8 +2029,6 @@ Wire Wire Line
 Wire Wire Line
 	4950 4350 4950 4450
 Wire Wire Line
-	4950 5150 4950 5250
-Wire Wire Line
 	4200 4350 4200 4450
 Wire Wire Line
 	3450 5150 3450 5250
@@ -2074,8 +2060,6 @@ Wire Wire Line
 	2700 2650 2700 2750
 Wire Wire Line
 	9450 5450 9450 5650
-Wire Wire Line
-	4950 5450 4950 5650
 Wire Wire Line
 	3450 5450 3450 5650
 Wire Wire Line
@@ -2249,7 +2233,6 @@ Connection ~ 3450 3150
 Connection ~ 4200 3150
 Connection ~ 4950 3150
 Connection ~ 5700 3150
-Connection ~ 5550 5150
 Wire Wire Line
 	5550 1500 5550 4500
 Wire Wire Line
@@ -2408,7 +2391,7 @@ Connection ~ 13000 3500
 Connection ~ 13000 2650
 Connection ~ 13000 1850
 Wire Wire Line
-	12250 1350 12250 4350
+	12250 1350 12250 5150
 Connection ~ 12250 1850
 Connection ~ 12250 2650
 Connection ~ 12250 3500
@@ -2509,17 +2492,6 @@ F 3 "" H 5550 4800 50  0000 C CNN
 	1    5550 4800
 	0    -1   -1   0   
 $EndComp
-$Comp
-L KEYSW L_FN1
-U 1 1 58ABBCEE
-P 5250 5150
-F 0 "L_FN1" H 5200 5150 60  0000 C CNN
-F 1 "KEYSW" H 5250 5050 60  0001 C CNN
-F 2 "TheKeebrary:MX_Plate_150H" H 5250 5150 60  0001 C CNN
-F 3 "" H 5250 5150 60  0000 C CNN
-	1    5250 5150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5550 5100 5550 5900
 $Comp
@@ -2544,4 +2516,5 @@ F 3 "" H 2050 4850 50  0000 C CNN
 	1    2050 4850
 	1    0    0    -1  
 $EndComp
+Connection ~ 12250 4350
 $EndSCHEMATC

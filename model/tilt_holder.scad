@@ -1,4 +1,4 @@
-use <shape.scad>
+use <base.scad>
 
 module tilt_holder()
 {
@@ -19,13 +19,12 @@ module tilt_holder()
         translate([15, 15]) screw_hole();
     }
 
-    
-
     module screw_hole()
     {
-        translate(4*z()) {
-            mirror(z()) cylinder(d=4, h=20);
-            cylinder(d=6, h=20);
+        translate(2*z()) {
+            mirror(z()) translate(-0.1*z()) cylinder(d=3.1, h=20, $fn=20);
+            cylinder(d1=3.1, d2=8, h=2.5, $fn=20);
+            translate(2.5*z()) cylinder(d=8, h=20, $fn=20);
         }
     }
 }
