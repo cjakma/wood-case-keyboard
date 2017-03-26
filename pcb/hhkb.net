@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/hwan/Documents/woodcarve-hhkb/pcb/hhkb.sch)
-    (date "2017年03月19日 05時39分59秒")
+    (date "2017年03月27日 03時23分45秒")
     (tool "Eeschema 4.0.6-e0-6349~53~ubuntu16.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -341,7 +341,7 @@
       (tstamp 58ABB916))
     (comp (ref L_CMD1)
       (value KEYSW)
-      (footprint TheKeebrary:MX_Plate_100H)
+      (footprint TheKeebrary:MX_Plate_150H)
       (libsource (lib keyboard_parts) (part KEYSW))
       (sheetpath (names /) (tstamps /))
       (tstamp 58ABBA2D))
@@ -945,10 +945,10 @@
         (pin (num 2) (name 2) (type passive))
         (pin (num 3) (name ~) (type passive)))))
   (libraries
-    (library (logical keyboard_parts)
-      (uri /home/hwan/Documents/woodcarve-hhkb/pcb/kicad_lib_tmk/keyboard_parts.lib))
     (library (logical device)
-      (uri /usr/share/kicad/library/device.lib)))
+      (uri /usr/share/kicad/library/device.lib))
+    (library (logical keyboard_parts)
+      (uri /home/hwan/Documents/woodcarve-hhkb/pcb/kicad_lib_tmk/keyboard_parts.lib)))
   (nets
     (net (code 1) (name "Net-(\"2\"1-Pad2)")
       (node (ref "\"2\"1") (pin 2))
