@@ -1,3 +1,5 @@
+![look1][look1]
+
 # Brief
 This is a hobby project, to make a copy of HHKB made of wood,
 but not limited to it. It is fully customizable, parameterized
@@ -58,7 +60,8 @@ toolchains or just talk with manufacturer.  I'll leave here very brief steps
 I have made, rather than full instruction. 
 
 1. Print `back_holder.stl` and `tilt_holder.stl` with a 3D printer.
-2. Fix wood block on CNC mill, and carve it with `base.stl`.
+2. Fix wood block on CNC mill, and carve it with `base.stl`. (I had to split it
+   two pieces)
 3. Fix a pair of `tilt_holder` with screw at bottom of the wood block.
 4. Place wood block again, and cut with `top_cutout.dxf`.
 Cut depth `lip_depth`mm from the highest point of the woodblock. It is
@@ -71,3 +74,5 @@ The origin of the model is set to bottom left most key's corner.
 6. Take off the block and fix it with `back_holder`, then cut it with
    `bottom_cutout`. Cut down until the thickness of top becomes 5mm.
 7. Take off the result. Sand and finish it.
+
+[look1]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2556.JPG "look1"
