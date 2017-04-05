@@ -62,17 +62,29 @@ I have made, rather than full instruction.
 1. Print `back_holder.stl` and `tilt_holder.stl` with a 3D printer.
 2. Fix wood block on CNC mill, and carve it with `base.stl`. (I had to split it
    two pieces)
+![ins2][ins2]
 3. Fix a pair of `tilt_holder` with screw at bottom of the wood block.
-4. Place wood block again, and cut with `top_cutout.dxf`.
+![ins3][ins3]
+4. Place wood block again, and cut it with `top_cutout.dxf`.
 Cut depth `lip_depth`mm from the highest point of the woodblock. It is
 defined in `common.scad`.
 The size of the model is arbitrary. Ignore the contour.
 You have to cutout only pockets of the model.
 The origin of the model is set to bottom left most key's corner.
+![ins4][ins4]
 5. Cut with `plate.dxf`. Again, ignore contour, cutout pockets. Cut down 6mm
    from the surface of previous cut.
+![ins5][ins5]
 6. Take off the block and fix it with `back_holder`, then cut it with
    `bottom_cutout`. Cut down until the thickness of top becomes 5mm.
+![ins6][ins6]
+![ins7][ins7]
 7. Take off the result. Sand and finish it.
 
 [look1]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2556.JPG "look1"
+[ins2]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2502.JPG "ins2"
+[ins3]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2507.JPG "ins3"
+[ins4]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2511.JPG "ins4"
+[ins5]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2514.JPG "ins5"
+[ins6]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2518.JPG "ins6"
+[ins7]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2519.JPG "ins7"
