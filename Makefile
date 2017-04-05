@@ -13,11 +13,11 @@ LAYOUT := layout/$(LAYOUT).layout
 LAYOUT_TARGET = $(MODEL_DIR)/params.scad
 
 .PHONY: all stl layout clean
-all: $(STL_TARGET) $(DXF_TARGET) $(LAYOUT_TARGET)
+all: $(LAYOUT_TARGET) $(STL_TARGET) $(DXF_TARGET)
 
-stl: $(STL_TARGET) $(LAYOUT_TARGET)
+stl: $(LAYOUT_TARGET) $(STL_TARGET)
 
-dxf: $(DXF_TARGET) $(LAYOUT_TARGET)
+dxf: $(LAYOUT_TARGET) $(DXF_TARGET)
 
 $(LAYOUT_TARGET): $(LAYOUT)
 		python3 layout_parser.py $(LAYOUT) > $@
@@ -31,5 +31,6 @@ $(OUT_DIR)/%.dxf: %.scad
 		$(SCAD) -o $@ $<
 
 clean:
+		rm $(MODEL_DIR)/params.scad
 		rm $(OUT_DIR)/*
 

@@ -4,16 +4,11 @@ import re
 import copy
 import cmath
 
-import matplotlib.pyplot as pl
-from descartes import PolygonPatch
 import shapely.ops as ops
 import shapely.geometry as geometry
-#  from shapely.ops import cascaded_union, polygonize
-#  from scipy.spatial import Delaunay
-#  import numpy as np
-#  import math
 
 
+e = 0.001
 deg_to_rad = cmath.pi / 180
 unit = 19.05
 inch = 25.4
@@ -38,7 +33,7 @@ class Switch:
         return str(self.pos)
 
     def getShape(self):
-        return geometry.Polygon([im_to_tuple(p) for p in self.corners]).buffer(0.2)
+        return geometry.Polygon([im_to_tuple(p) for p in self.corners]).buffer(e)
 
     def toList(self):
         return [[self.center.real, self.center.imag],
@@ -137,20 +132,6 @@ def parseLayout(raw):
     return switches
 
 
-def plot_polygon(polygon):
-    fig = pl.figure(figsize=(10, 10))
-    ax = fig.add_subplot(111)
-    margin = .3
-
-    x_min, y_min, x_max, y_max = polygon.bounds
-
-    ax.set_xlim([x_min-margin, x_max+margin])
-    ax.set_ylim([y_min-margin, y_max+margin])
-    patch = PolygonPatch(polygon, fc='#999999', ec='#000000', fill=True, zorder=-1)
-    ax.add_patch(patch)
-    return fig
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("layout", type=str,
@@ -161,14 +142,11 @@ if __name__ == "__main__":
         raw = f.read()
     switches = parseLayout(raw)
     shapes = [sw.getShape() for sw in switches]
-    plate = ops.cascaded_union(shapes)
+    plate = ops.cascaded_union(shapes).buffer(-e)
 
     def echo(name, val):
         print(name, '=', val, ';')
 
     minx, miny, maxx, maxy = plate.bounds
-    #  save('plate_width', maxy - miny)
-    #  save('plate_length', maxx - minx)
-    #  save('plate_coords', [list(coord) for coord in plate.exterior.coords])
     echo('plate_size', '[%f, %f]' % (maxx-minx, maxy-miny))
     echo('switch_info', [sw.toList() for sw in switches])
