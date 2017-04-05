@@ -5,10 +5,22 @@ This is a hobby project, to make a copy of HHKB made of wood,
 but not limited to it. It is fully customizable, parameterized
 toolchain to generate a keyboard case.
 
-# Features
+## Features
 - Made of wood
 - Nice curved shape
+- Customizable layout and shape
 - Open bottom (minimizing overall height and show off your PCB!)
+- Compatible with PCBs with SMD components(?)
+
+## Caveats
+- The bottom surface is not flat. I started with flat wood block, but some
+  distortion is made at some point.
+- Open bottom may not a good idea in a long term. And you always have to worry
+  about conductive things around your desk.
+- Layout support is quiet limited at this point. It can parse only subset of
+  [keyboard-layout-editor](http://www.keyboard-layout-editor.com/)s syntax.
+  Result maybe ugly with other layouts than 60% board.
+<!-- - You have to make PCB yourself unless you like [HHKB layout](https://github.com/jinhwanlazy/hhkb-pcb).  -->
 
 # Dependancies
 - python3
@@ -89,3 +101,4 @@ The origin of the model is set to bottom leftmost key corner.
 [ins5]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2514.JPG "ins5"
 [ins6]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2518.JPG "ins6"
 [ins7]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2519.JPG "ins7"
+
