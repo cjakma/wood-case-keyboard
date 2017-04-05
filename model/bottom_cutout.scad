@@ -1,22 +1,13 @@
-include <params.scad>
-use <base.scad>
-use <top_cutout.scad>
 use <scad-utils/morphology.scad>
+include <common.scad>
 
 
-// margin between pcb and case.
-margin = 0.5;
-
-difference()
-{
-    translate([-10, -10]) square(plate_size+[20, 20]);
-    bottom_cutout_2D();
-}
+invert_2D() bottom_cutout_2D();
 
 /* bottom_cutout(); */
 module bottom_cutout_2D()
 {
-    outset(r=margin)
+    outset(r=0.5)
     square(plate_size);
 }
 
