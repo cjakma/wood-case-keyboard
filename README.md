@@ -11,16 +11,16 @@ toolchain to generate a keyboard case.
 - Made of wood
 - Nice curved shape
 - Customizable layout and shape
-- Open bottom (minimizing overall height and show off your PCB!)
+- Open bottom (it minimizes overall height and you can show off your beautiful PCB!)
 - Compatible with PCBs with SMD components(?)
 
 ## Caveats
 - The bottom surface is not flat. I started with flat wood block, but some
-  distortion is made at some point.
+  distortion is made at some point while milling.
 - Open bottom may not a good idea in a long term. And you always have to worry
   about conductive things around your desk.
 - Layout support is quiet limited at this point. It can parse only subset of
-  [keyboard-layout-editor](http://www.keyboard-layout-editor.com/)s syntax.
+  [keyboard-layout-editor](http://www.keyboard-layout-editor.com/)'s syntax.
   Result maybe ugly with other layouts than 60% board.
 - There seems to be errors in `base.stl` model. They are automatically fixed in most
   tools but it can be problametic in some cases. 
@@ -47,7 +47,7 @@ like.
     cd wood-case-keyboard
     make
 
-In OSX, you might have to specify full path of openscad.
+In OSX, you have to specify full path of openscad.
 
     make SCAD=/Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD
 
@@ -71,7 +71,7 @@ I have made mistakes(forgetting to change
 bit, feeding wrong gcode), and encountered number of hardware problems(slipping
 bits, burning wood, missing steps, etc). I had to make monkeypatchs everytime
 something goes wrong. I highly recommend you to use commercial grade
-toolchains or just talk with manufacturer.  I'll leave here very brief steps
+toolchain or just talk with manufacturer.  I'll leave here very brief steps
 I have made, rather than full instruction. 
 
 0. I used 330 * 130 * 34mm walnut block.
