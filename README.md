@@ -15,13 +15,13 @@ toolchain to generate a keyboard case.
 - Compatible with PCBs with SMD components(?)
 
 ## Caveats
-- The bottom surface is not flat. I started with flat wood block, but some
-  distortion is made at some point while milling.
-- Open bottom may not a good idea in a long term. And you always have to worry
-  about conductive things around your desk.
-- Layout support is quiet limited at this point. It can parse only subset of
+- The bottom surface is not flat. I started with flat wood block, but
+  it distorted itself while milling.
+- Open bottom may not a good idea in a long term. You always have to worry
+  about conductive things on your desk.
+- Layout support is quite limited at this point. It can parse only subset of
   [keyboard-layout-editor](http://www.keyboard-layout-editor.com/)'s syntax.
-  Result maybe ugly with other layouts than 60% board.
+  Result maybe ugly with layouts other than 60% board.
 - There seems to be errors in `base.stl` model. They are automatically fixed in most
   tools but it can be problametic in some cases. 
 <!-- - You have to make PCB yourself unless you like [HHKB layout](https://github.com/jinhwanlazy/hhkb-pcb).  -->
