@@ -74,8 +74,8 @@ and it came back with disasters. Most of them are covered with sanding process,
 but some were unreversible, especially, you can see a hole at bottom right corner of the
 case in the first picture.
 I had to make monkeypatchs everytime something goes wrong. 
-I'll leave here very brief steps I have made, rather than full instruction. 
 I highly recommend you to use commercial grade toolchain or just talk with manufacturer. 
+I'll leave here very brief steps I have made, rather than full instruction. 
 
 0. I used 330 * 130 * 34mm walnut block.
 1. Print `back_holder.stl` and `tilt_holder.stl` with 3D printer.
