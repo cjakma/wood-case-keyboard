@@ -1,4 +1,6 @@
+![look0][look0]
 ![look1][look1]
+![look2][look2]
 
 # Brief
 This is a hobby project, to make a copy of HHKB made of wood,
@@ -96,7 +98,9 @@ The origin of the model is set to bottom leftmost key position.
 7. Make a hole at back of the block. I did it manually with dremel.
 8. Take off the result. Sand and finish it with oil stain and varnish.
 
-[look1]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2556.JPG "look1"
+[look0]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2556.JPG "look0"
+[look1]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2566.JPG "look1"
+[look2]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2569.JPG "look2"
 [ins2]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2502.JPG "ins2"
 [ins3]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2507.JPG "ins3"
 [ins4]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2511.JPG "ins4"
