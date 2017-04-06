@@ -20,6 +20,8 @@ toolchain to generate a keyboard case.
 - Layout support is quiet limited at this point. It can parse only subset of
   [keyboard-layout-editor](http://www.keyboard-layout-editor.com/)s syntax.
   Result maybe ugly with other layouts than 60% board.
+- There seems to be errors in `base.stl` model. They are automatically fixed in most
+  tools but it can be problametic in some cases. 
 <!-- - You have to make PCB yourself unless you like [HHKB layout](https://github.com/jinhwanlazy/hhkb-pcb).  -->
 
 # Dependancies
@@ -62,7 +64,7 @@ preparing...
 # Instruction
 I have used a [Shapeoko1](https://www.shapeoko.com/shapeoko1.html) for milling
 , and [PyCam](http://pycam.sourceforge.net/) to generate 
-gcodes. It was painfull job.
+toolpaths. It was painfull job.
 I have made mistakes(forgetting to change
 bit, feeding wrong gcode), and encountered number of hardware problems(slipping
 bits, burning wood, missing steps, etc). I had to make monkeypatchs everytime
@@ -71,7 +73,7 @@ toolchains or just talk with manufacturer.  I'll leave here very brief steps
 I have made, rather than full instruction. 
 
 0. I used 330 * 130 * 34mm walnut block.
-1. Print `back_holder.stl` and `tilt_holder.stl` with a 3D printer.
+1. Print `back_holder.stl` and `tilt_holder.stl` with 3D printer.
 2. Fix wood block on CNC mill, and carve it with `base.stl`. I had to split it
 two pieces, due to limitaion of build space. 
 ![ins2][ins2]
@@ -82,7 +84,7 @@ Cut depth is `lip_depth`mm from the highest point of the woodblock. It is
 defined in `common.scad`.
 The size of the model is arbitrary. Ignore the contour.
 You have to cutout only pockets of the model.
-The origin of the model is set to bottom leftmost key corner.
+The origin of the model is set to bottom leftmost key position.
 ![ins4][ins4]
 5. Cut with `plate.dxf`. Again, ignore contour, cutout pockets. Cut down 6mm
    from the surface of previous cut.
