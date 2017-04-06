@@ -55,7 +55,7 @@ In OSX, you have to specify full path of openscad.
 ## Layout
 Layout definitions are located under `layout` directory. They are 
 compatible with <http://www.keyboard-layout-editor.com/>. 
-You can feed them with following command.
+You can feed one of them like this.
 
     make clean
     make LAYOUT=layout/plank.layout
