@@ -22,7 +22,7 @@ class Switch:
     def __init__(self, ori, name):
         self.name = name
         self.pos = ori.pos
-        self.rot = ori.rot
+        self.rot = -ori.rot
         self.width = ori.w
         self.height = ori.h
         self.center = ori.getCenter()
