@@ -65,7 +65,7 @@ but some were unreversible, especially, you can see a hole at bottom right corne
 case in the first picture.
 I had to make monkeypatchs everytime something goes wrong. 
 I highly recommend you to use commercial grade toolchain or just talk with manufacturer. 
-I'll leave here very brief steps I have made, rather than full instruction. 
+I'll leave here very brief steps I have followed, rather than full instruction. 
 
 0. I used 330 * 130 * 34mm walnut block.
 1. Print `back_holder.stl` and `tilt_holder.stl` with 3D printer.
@@ -88,8 +88,11 @@ The origin of the model is set to bottom leftmost key position.
    `bottom_cutout.dxf`. Cut down until the thickness of top becomes 5mm.
 ![ins6][ins6]
 ![ins7][ins7]
-7. Make a hole at back of the block. I did it manually with dremel.
-8. Take off the result. Sand and finish it with oil stain and varnish.
+7. Take off the result. 
+8. Make a hole at back, so that USB connector can show up.
+   I did by hand with dremel.
+![ins8][ins8]
+9. Sand and finish it with oil stain and varnish.
 
 [look0]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2556.JPG "look0"
 [look1]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2566.JPG "look1"
@@ -100,6 +103,7 @@ The origin of the model is set to bottom leftmost key position.
 [ins5]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2514.JPG "ins5"
 [ins6]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2518.JPG "ins6"
 [ins7]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2519.JPG "ins7"
+[ins8]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2571.JPG "ins8"
 [layouts]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/layouts.png "layouts"
 
 ## Caveats
