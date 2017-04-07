@@ -31,7 +31,7 @@ module plate_cutout(u) {
         (7.00 <= u && u < 8.00) ? 4.50 : 5.25;
 
     if (u >= 2) 
-    mirrored(x) translate(2.5*unit*x) stabil(); 
+    mirrored(x) translate(-A/2*inch*x) stabil(); 
 }
 
 module plate_2D()
