@@ -27,7 +27,7 @@ properly even if you don't want to change anything. See
 [Customization](#customization) section for details.
 
 Following command will generate all 3D and 2D models you need, in
-`stl` and `dxf` format, under `out` directory. After you excecute `make` 
+`stl` and `dxf` format, under `out` directory. Once you excecute `make` 
 successfuly, you can open `model/preview.scad` and see how it will look
 like.
 
