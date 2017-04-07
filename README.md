@@ -48,7 +48,7 @@ You can feed one of them like this.
     make clean
     make LAYOUT=layout/plank.layout
 
-![layout][layout]
+![layouts][layouts]
 
 ## Parameters
 preparing...
@@ -100,7 +100,7 @@ The origin of the model is set to bottom leftmost key position.
 [ins5]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2514.JPG "ins5"
 [ins6]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2518.JPG "ins6"
 [ins7]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2519.JPG "ins7"
-[layouts]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2519.JPG "layouts"
+[layouts]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/layouts.png "layouts"
 
 ## Caveats
 - The bottom surface is not flat. I started with flat wood block, but
