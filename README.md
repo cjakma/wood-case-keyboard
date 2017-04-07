@@ -90,7 +90,7 @@ The origin of the model is set to bottom leftmost key position.
 ![ins7][ins7]
 7. Take off the result. 
 8. Make a hole at back, so that USB connector can show up.
-   I did by hand with dremel.
+   I did it by hand with dremel.
 ![ins8][ins8]
 9. Sand and finish it with oil stain and varnish.
 
