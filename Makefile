@@ -4,7 +4,7 @@ VPATH = $(MODEL_DIR):$(OUT_DIR)
 
 LAYOUT = layout/hhkb.layout
 SCAD = openscad-nightly
-STL_TARGET = base tilt_holder back_holder
+STL_TARGET = base tilt_holder back_holder preview
 DXF_TARGET = top_cutout bottom_cutout plate
 
 STL_TARGET := $(foreach f,$(STL_TARGET),$(OUT_DIR)/$(f).stl)

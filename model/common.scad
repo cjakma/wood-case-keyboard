@@ -95,8 +95,6 @@ function base_size() = [xmax()-xmin(), ymax()-ymin(), block_size[2]];
 function block_height() = block_size[2];
 function tilted_height() = front_height + (ymax()-ymin())*sin(tilt);
 
-echo("tilted_height:", tilted_height());
-
 half_circle = [for (i = [0 : 180/12 : 180]) [cos(i), sin(i)]];
 
 module invert_2D()
