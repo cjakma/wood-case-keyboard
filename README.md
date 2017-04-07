@@ -14,18 +14,6 @@ toolchain to generate a keyboard case.
 - Open bottom (it minimizes overall height and you can show off your beautiful PCB!)
 - Compatible with PCBs with SMD components(?)
 
-## Caveats
-- The bottom surface is not flat. I started with flat wood block, but
-  it distorted itself while milling.
-- Open bottom may not a good idea in a long term. You always have to worry
-  about conductive things on your desk.
-- Layout support is quite limited at this point. It can parse only subset of
-  [keyboard-layout-editor](http://www.keyboard-layout-editor.com/)'s syntax.
-  Result maybe ugly with layouts other than 60% board.
-- There seems to be errors in `base.stl` model. They are automatically fixed in most
-  tools but it can be problametic in some cases. 
-<!-- - You have to make PCB yourself unless you like [HHKB layout](https://github.com/jinhwanlazy/hhkb-pcb).  -->
-
 # Dependancies
 - python3
 - [python-shapely](https://pypi.python.org/pypi/Shapely)
@@ -110,3 +98,18 @@ The origin of the model is set to bottom leftmost key position.
 [ins5]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2514.JPG "ins5"
 [ins6]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2518.JPG "ins6"
 [ins7]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2519.JPG "ins7"
+
+## Caveats
+- The bottom surface is not flat. I started with flat wood block, but
+  it distorted itself while milling.
+- Open bottom may not a good idea in a long term. You always have to worry
+  about conductive things on your desk.
+- Layout support is quite limited at this point. It can parse only subset of
+  [keyboard-layout-editor](http://www.keyboard-layout-editor.com/)'s syntax.
+  Result maybe ugly with layouts other than 60% board.
+- There seems to be errors in `base.stl` model. They are automatically fixed in most
+  tools but it can be problametic in some cases. 
+- You have to source PCB yourself unless you like [HHKB layout](https://github.com/jinhwanlazy/hhkb-pcb). 
+- Note that the result on the pictures became smaller than 3D model.
+  I had to cut it little more to hide my mistakes.
+
