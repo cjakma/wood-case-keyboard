@@ -23,12 +23,15 @@ module switch() {
 module plate_cutout(u) {
     if (u == 6)  translate(0.5*u*x) switch();
     else            switch();
-    mirrored(x) {
-        if (u == 6)                 { translate(2.5*unit*x)     stabil(); }
-        else if (2 <= u && u < 3)   { translate(-0.94/2*inch*x) stabil(); } 
-        else if (3 <= u && u < 4.5) { translate(-1.50/2*inch*x) stabil(); } 
-        else if (4.5 <= u && u < 8) { translate(-5.25/2*inch*x) stabil(); } 
-    }
+
+    A = (u == 6)                ? 3.75 :
+        (2.00 <= u && u < 3.00) ? 0.94 :
+        (3.00 <= u && u < 6.25) ? 1.50 :
+        (6.25 <= u && u < 7.00) ? 3.75 :
+        (7.00 <= u && u < 8.00) ? 4.50 : 5.25;
+
+    if (u >= 2) 
+    mirrored(x) translate(2.5*unit*x) stabil(); 
 }
 
 module plate_2D()
