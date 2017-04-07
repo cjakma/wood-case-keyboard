@@ -28,6 +28,8 @@ class Switch:
         self.center = ori.getCenter()
         self.corners = ori.getCorners()
         self.row = ori.row
+        if self.height > self.width:
+            self.fix_vert_key()
 
     def __repr__(self):
         return str(self.pos)
@@ -38,6 +40,11 @@ class Switch:
     def toList(self):
         return [[self.center.real, self.center.imag],
                 self.rot, self.width, self.row]
+
+    def fix_vert_key(self):
+        """ rotate vertically long keys 90 degree """
+        self.rot += 90
+        self.width, self.height = self.height, self.width
 
 
 class Orientation:
@@ -135,8 +142,8 @@ def parseLayout(raw):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("layout", type=str,
-                        help="File name which is containing layout \
-                        information exported from keyboard-layout-editor")
+                        help="File containing layout data. Compatible with \
+                              keyboard-layout-editor.com")
     fname = parser.parse_args().layout
     with open(fname, "r") as f:
         raw = f.read()
