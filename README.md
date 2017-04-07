@@ -10,9 +10,9 @@ toolchain to generate a keyboard case.
 ## Features
 - Made of wood
 - Nice curved shape
-- Customizable layout and shape
+- Customizable layout and shape (compatible with <http://www.keyboard-layout-editor.com/>)
 - Open bottom (it minimizes overall height and you can show off your beautiful PCB!)
-- Compatible with PCBs with SMD components(?)
+- Compatible with most PCBs built with SMD components(?)
 
 # Dependancies
 - python3
@@ -115,4 +115,7 @@ The origin of the model is set to bottom leftmost key position.
 - You have to source PCB yourself unless you like [HHKB layout](https://github.com/jinhwanlazy/hhkb-pcb). 
 - Note that the result on the pictures became smaller than 3D model.
   I had to cut it little more to hide my mistakes.
+- There are some different types of [6u spacebar](https://deskthority.net/wiki/Space_bar_dimensions#6_units_.28114mm_wide.2C_3_keymounts.2C_57mm_and_38mm_apart.29).
+  I hardcoded one of them in `model/plate.scad`. You have to manually modify it
+  if you want something else.
 
