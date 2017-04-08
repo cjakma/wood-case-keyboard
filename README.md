@@ -14,6 +14,15 @@ toolchain to generate a keyboard case.
 - Open bottom (it minimizes overall height and you can show off your beautiful PCB!)
 - Compatible with most PCBs built with SMD components(?)
 
+## BOM
+| Name                      | Quantities | Price  | Note                                                             |
+| ------------------------- | ---------- | -----  | ---                                                              |
+| 36x130x330mm walnut block | 1          | ¥2,080 | <http://shop.woodworks-marutoku.com/products/muku/item/m003.php> |
+| Cherry mx brown switches  | 60         | ¥4,640 |                                                                  |
+| PCB                       | 1          | ¥2,908 | DIY <https://github.com/jinhwanlazy/hhkb-pcb>                    |
+| Keycaps                   | 1          | $50    | Special order from <http://www.maxkeyboard.com/>                 |
+
+
 # Dependancies
 - python3
 - [python-shapely](https://pypi.python.org/pypi/Shapely)
@@ -67,7 +76,7 @@ I had to make monkeypatchs everytime something goes wrong.
 I highly recommend you to use commercial grade toolchain or just talk with manufacturer. 
 I'll leave here very brief steps I have followed, rather than full instruction. 
 
-0. I used 330 * 130 * 34mm walnut block.
+0. I started with 330x130x34mm walnut block.
 1. Print `back_holder.stl` and `tilt_holder.stl` with 3D printer.
 2. Fix wood block on CNC mill, and carve it with `base.stl`. I had to split it
 two pieces, due to limitaion of build space. 
@@ -94,18 +103,6 @@ The origin of the model is set to bottom leftmost key position.
 ![ins8][ins8]
 9. Sand and finish it with oil stain and varnish.
 
-[look0]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2556.JPG "look0"
-[look1]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2566.JPG "look1"
-[look2]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2569.JPG "look2"
-[ins2]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2502.JPG "ins2"
-[ins3]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2507.JPG "ins3"
-[ins4]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2511.JPG "ins4"
-[ins5]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2514.JPG "ins5"
-[ins6]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2518.JPG "ins6"
-[ins7]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2519.JPG "ins7"
-[ins8]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2571.JPG "ins8"
-[layouts]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/layouts.png "layouts"
-
 ## Caveats
 - The bottom surface is not flat. I started with flat wood block, but
   it distorted itself while milling.
@@ -123,3 +120,15 @@ The origin of the model is set to bottom leftmost key position.
   I hardcoded one of them in `model/plate.scad`. You have to manually modify it
   if you want something else.
 
+
+[look0]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2556.JPG "look0"
+[look1]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2566.JPG "look1"
+[look2]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2569.JPG "look2"
+[ins2]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2502.JPG "ins2"
+[ins3]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2507.JPG "ins3"
+[ins4]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2511.JPG "ins4"
+[ins5]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2514.JPG "ins5"
+[ins6]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2518.JPG "ins6"
+[ins7]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2519.JPG "ins7"
+[ins8]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/IMG_2571.JPG "ins8"
+[layouts]: https://github.com/jinhwanlazy/wood-case-keyboard/raw/master/pics/layouts.png "layouts"
