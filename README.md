@@ -15,12 +15,12 @@ toolchain to generate a keyboard case.
 - Compatible with most PCBs built with SMD components(?)
 
 ## BOM
-| Name                      | Quantities | Price  | Note                                                             |
-| ------------------------- | ---------- | -----  | ---                                                              |
-| 36x130x330mm walnut block | 1          | ¥2,080 | <http://shop.woodworks-marutoku.com/products/muku/item/m003.php> |
-| Cherry mx brown switches  | 60         | ¥4,640 |                                                                  |
-| PCB                       | 1          | ¥2,908 | DIY <https://github.com/jinhwanlazy/hhkb-pcb>                    |
-| Keycaps                   | 1          | $50    | Special order from <http://www.maxkeyboard.com/>                 |
+| Name                      | Quantities | Price     | Note                                                             |
+| ------------------------- | ---------- | -----     | ---                                                              |
+| 36x130x330mm walnut block | 1          | 2,080 JPY | <http://shop.woodworks-marutoku.com/products/muku/item/m003.php> |
+| Cherry mx brown switches  | 60         | 4,640 JPY |                                                                  |
+| PCB                       | 1          | 2,908 JPY | DIY <https://github.com/jinhwanlazy/hhkb-pcb>                    |
+| Keycaps                   | 1          | 50 USD    | Special order from <http://www.maxkeyboard.com/>                 |
 
 
 # Dependancies
